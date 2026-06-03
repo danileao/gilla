@@ -118,7 +118,7 @@ Create a `devex.json` at your project root to customize the output:
 {
     "name": "My App",
     "environment": "production",
-    "buildSteps": ["npm install", "npm test"],
+    "buildSteps": ["pnpm install", "pnpm test"],
     "governance": {
         "enforceWorkId": true,
         "requiredApprovals": 2,

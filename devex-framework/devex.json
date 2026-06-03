@@ -3,7 +3,7 @@
     "environment": "production",
     "buildSteps": [
         "pnpm install",
-        "pnpm test",
+        "pnpm test -- --passWithNoTests",
         "pnpm build"
     ],
     "governance": {

@@ -26,6 +26,10 @@ def check_branch():
         
     try:
         repo = Repo(".")
+        if repo.head.is_detached:
+            console.print("[yellow]⚠ HEAD em estado detached (sem branch ativa). Pulando validação de Work ID.[/yellow]")
+            raise typer.Exit(code=0)
+
         branch_name = repo.active_branch.name
 
         if branch_name in ["main", "master", "development", "dev"]:
