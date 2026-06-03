@@ -71,6 +71,10 @@ def pr_create(
             raise Exception("'gitpython' library is missing.")
 
         repo = Repo(".")
+        if repo.head.is_detached:
+            console.print("[red]❌ Error:[/red] Cannot create a Pull Request with detached HEAD. Switch to a feature branch first.")
+            raise typer.Exit(code=1)
+
         current_branch = repo.active_branch.name
 
         if current_branch in ["main", "master"]:

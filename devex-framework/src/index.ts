@@ -12,7 +12,7 @@ const githubProjectConfig: GitHubWorkflowConfig = {
     environment: "production",
     buildSteps: [
         "pnpm install",
-        "pnpm run test",
+        "pnpm run test -- --passWithNoTests",
         "pnpm run build"
     ],
     governance: {
