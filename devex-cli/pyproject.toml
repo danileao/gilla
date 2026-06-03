@@ -1,0 +1,23 @@
+[project]
+name = "devex-cli"
+version = "0.1.0"
+description = "DevEx Golden Path CLI — Git governance, DORA metrics, SOC 2 audit trails, and quality gates for engineering teams"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "typer>=0.12.0",
+    "rich>=13.0.0",
+    "gitpython>=3.1.0",
+]
+
+[project.scripts]
+devex = "devex_cli.main:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.3",
+]

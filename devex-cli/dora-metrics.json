@@ -1,0 +1,14 @@
+{
+  "deployment_frequency": 2.0,
+  "total_deploys": 2,
+  "lead_time_median_hours": 3.25,
+  "lead_time_prs_analyzed": 2,
+  "lead_time_bots_excluded": 0,
+  "lead_time_exact_zero": 0,
+  "change_failure_rate": 0.0,
+  "failed_deploys": 0,
+  "mttr_hours": 0.0,
+  "period_days": 30,
+  "owner": "fin",
+  "repo": "transactionify-api"
+}

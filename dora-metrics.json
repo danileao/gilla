@@ -1,0 +1,14 @@
+{
+  "deployment_frequency": 10.0,
+  "total_deploys": 10,
+  "lead_time_median_hours": 37.7,
+  "lead_time_prs_analyzed": 13,
+  "lead_time_bots_excluded": 0,
+  "lead_time_exact_zero": 0,
+  "change_failure_rate": 0.0,
+  "failed_deploys": 0,
+  "mttr_hours": 0,
+  "period_days": 30,
+  "owner": "danileao",
+  "repo": "trck-api"
+}

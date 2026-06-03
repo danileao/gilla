@@ -1,0 +1,1 @@
+WORK_ID_REGEX = r"^[A-Z]{3}-\d+"

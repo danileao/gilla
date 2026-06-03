@@ -1,0 +1,39 @@
+{
+  "name": "devex-framework",
+  "version": "0.1.0",
+  "description": "DevEx Golden Path Framework — TypeScript library for generating SOC 2 compliant CI/CD pipelines, PR templates, and CDK infrastructure stacks",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "devex-framework": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "start": "tsx src/cli.ts"
+  },
+  "keywords": [
+    "devex",
+    "golden-path",
+    "ci-cd",
+    "soc2",
+    "dora",
+    "devops",
+    "cdk",
+    "github-actions"
+  ],
+  "author": "DevEx Platform Team",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danileao/gilla.git",
+    "directory": "devex-framework"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.1",
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.8"
+  }
+}
