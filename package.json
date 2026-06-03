@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "scripts": {
+    "devex-framework": "pnpm --filter devex-framework run start"
+  }
+}

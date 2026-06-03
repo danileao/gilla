@@ -74,18 +74,45 @@ Generates CI/CD pipelines, PR templates, and infrastructure definitions from a `
 | `generateAwsCdkStack` | `infra/cdk-stack.json` |
 | `generateAwsCdkStackForEnv` | `infra/cdk-stack-{env}.json` |
 
+## Prerequisites
+
+- **Node.js** 22+ and **pnpm** (`npm install -g pnpm`)
+
 ## Quick Start
 
-### 1. Install the CLI
+### 1. Clone and setup
 
 ```bash
-uv tool install "devex-cli@git+https://github.com/danileao/gilla.git#subdirectory=devex-cli"
-devex --help
+git clone https://github.com/danileao/gilla.git
+cd gilla
+pnpm install
 ```
 
-### 2. Configure your project
+### 2. Generate everything
 
-Create a `devex.json` at the project root:
+```bash
+pnpm devex-framework
+```
+
+This generates a CI/CD workflow (`.github/workflows/ci.yml`), PR template (`.github/PULL_REQUEST_TEMPLATE.md`), and CDK stacks (`infra/cdk-stack-*.json`) using the example config at `devex-framework/devex.json`.
+
+### 3. Run tests
+
+```bash
+cd devex-framework
+pnpm test
+```
+
+---
+
+### Using as a dependency in your own project
+
+```bash
+pnpm add "devex-framework@git+https://github.com/danileao/gilla.git#subdirectory=devex-framework"
+pnpm exec devex-framework
+```
+
+Create a `devex.json` at your project root to customize the output:
 
 ```json
 {
@@ -111,40 +138,11 @@ Create a `devex.json` at the project root:
 }
 ```
 
-### 3. Generate CI/CD pipeline
+### CLI (optional)
 
 ```bash
-# If installed as a dependency via pnpm:
-pnpm devex-framework
-
-# Or directly from the repo:
-node ./node_modules/.bin/devex-framework
-```
-
-### 4. Initialize pre-push hooks
-
-```bash
-devex init
-```
-
-### 5. Create a PR
-
-```bash
-devex pr-create --title "FIN-123: Add payment gateway" --reviewer user1 --reviewer user2
-```
-
-## Installation from Repository
-
-### CLI (via uv)
-
-```bash
-uv tool install "devex-cli@git+https://github.com/<org>/gilla.git#subdirectory=devex-cli"
-```
-
-### Framework (via pnpm)
-
-```bash
-pnpm add "devex-framework@git+https://github.com/<org>/gilla.git#subdirectory=devex-framework"
+uv tool install "devex-cli@git+https://github.com/danileao/gilla.git#subdirectory=devex-cli"
+devex --help
 ```
 
 ## DORA Metrics
